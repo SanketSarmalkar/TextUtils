@@ -30,7 +30,7 @@ export default function TextForm(props) {
         setText(newText.join(" "));
     }
     // usestate is one of the HOOKs
-  const [text, setText] = useState('Enter text here');//ratlo useState is used to make new variable
+  const [text, setText] = useState('type or paste your Text here.....');//ratlo useState is used to make new variable
   /*setText("kkkkkk"); this is how you change the text variable*/
   return (
     <>
@@ -42,16 +42,18 @@ export default function TextForm(props) {
         <button className={`btn btn primary mx-1 my-1 bg-${props.mode} text-${(props.mode==="light")?"dark":"white"}`} onClick={handleUpClick}>Convert to Uppercase</button>
         <button className={`btn btn primary mx-1 my-1 bg-${props.mode} text-${(props.mode==="light")?"dark":"white"}`} onClick={handleLoClick}>Convert to Lowercase</button>
         <button className={`btn btn primary mx-1 my-1 bg-${props.mode} text-${(props.mode==="light")?"dark":"white"}`} onClick={handleClearClick}>Clear Text</button>
-        <button className={`btn btn primary mx-1 my-1 bg-${props.mode} text-${(props.mode==="light")?"dark":"white"}`} onClick={handleCopy}>Copy Text</button>
         <button className={`btn btn primary mx-1 my-1 bg-${props.mode} text-${(props.mode==="light")?"dark":"white"}`} onClick={handleExtraSpaces}>handle Extra Spaces</button>
         
     </div>
+    <hr />
     <div className={`container my-2 text-${(props.mode==="light")?"dark":"light"}`}>
         <h2>Text Summary</h2>
         <p>{(text==="")?0:text.split(" ").length} <b>Words</b> and {text.length} <b>Characters</b></p>
         <p>{(text==="")?0:(text.split(" ").length * 0.4).toPrecision(4)} <b>Minutes</b> to read the content.</p>
         <h2>Preview</h2>
-        <p>{(text==="")?"No Text Is Entered":text}</p>
+        <p>{(text==="")?"The textForm is Empty":text}</p>
+        
+        <button className={`btn btn primary my-1 bg-${(props.mode==="dark")?"dark":"white"} text-${(props.mode==="light")?"dark":"white"}`} onClick={handleCopy}>Copy Text</button>
     </div>
     </>
   )
