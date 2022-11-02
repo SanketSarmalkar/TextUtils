@@ -7,6 +7,7 @@ export default function TextForm(props) {
         console.log("Uppercase was clicked");
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("converted to Upper Case","success");
     }
     const handleOnChange = (event)=>{
         console.log("Change occured in textarea");
@@ -15,19 +16,24 @@ export default function TextForm(props) {
     const handleLoClick = ()=>{
         console.log("Lowercase was Clicked");
         setText(text.toLowerCase());
+        props.showAlert("converted to Lower Case","success");
     }
     const handleClearClick = ()=>{
         console.log("Clear was Clicked");
         setText("");
+        
+        props.showAlert("The text is cleared","success");
     }
     const handleCopy = ()=>{
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("The text is copied","success");
     }
     const handleExtraSpaces = ()=>{
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("Extra spaces are removed","success");
     }
     // usestate is one of the HOOKs
   const [text, setText] = useState('type or paste your Text here.....');//ratlo useState is used to make new variable
@@ -48,7 +54,7 @@ export default function TextForm(props) {
     <hr />
     <div className={`container my-2 text-${(props.mode==="light")?"dark":"light"}`}>
         <h2>Text Summary</h2>
-        <p>{(text==="")?0:text.split(" ").length} <b>Words</b> and {text.length} <b>Characters</b></p>
+        <p>{(text==="")?0:(text.charAt(text.length-1)===" ")?text.split(" ").length-1:text.split(" ").length} <b>Words</b> and {text.length} <b>Characters</b></p>
         <p>{(text==="")?0:(text.split(" ").length * 0.4).toPrecision(4)} <b>Minutes</b> to read the content.</p>
         <h2>Preview</h2>
         <p>{(text==="")?"The textForm is Empty":text}</p>
