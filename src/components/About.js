@@ -69,9 +69,9 @@ export default function About(props) {
     </div>
   </div>
 </div>
-<div className="my-3">
+{/*<div className="my-3">
 <button type="button" className="btn btn-primary" onClick={toggleStyle}>{buttonText}</button>
-</div>
+  </div>*/}
 
     </div>
   )
