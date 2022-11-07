@@ -52,7 +52,8 @@ function App() {
           mode={mode}
           Alert={showAlert}
         />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About 
+          mode={mode}/>} />
         </Routes>
         
       </div>
