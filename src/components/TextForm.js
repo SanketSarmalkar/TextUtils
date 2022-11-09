@@ -54,7 +54,7 @@ export default function TextForm(props) {
     <hr />
     <div className={`container my-2 text-${(props.mode==="light")?"dark":"light"}`}>
         <h2>Text Summary</h2>
-        <p>{(text==="")?0:(text.charAt(text.length-1)===" ")?text.split(" ").length-1:text.split(" ").length} <b>Words</b> and {text.length} <b>Characters</b></p>
+        <p>{text.split(" ").filter((word)=>{return word.length!==0}).length} <b>Words</b> and {text.length} <b>Characters</b></p>
         <p>{(text==="")?0:(text.split(" ").length * 0.4).toPrecision(4)} <b>Minutes</b> to read the content.</p>
         <h2>Preview</h2>
         <p>{(text==="")?"The textForm is Empty":text}</p>
