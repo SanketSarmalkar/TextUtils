@@ -64,7 +64,7 @@ export default function About(props) {
     </h2>
     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div className={`accordion-body bg-${(props.mode==="dark")?"dark":"light"} text-${(props.mode==="light")?"dark":"light"}`} /*style={myStyle}*/>
-        Text_Utils is a free to use Character counter tool that provides instant character count & word count statistics for a given text. Text_Utils reports the number of words and characters. Thus it is suitable for writing text with word/ character limit.
+        <strong>Text_Utils</strong> is a free to use Character counter tool that provides instant character count & word count statistics for a given text. Text_Utils reports the number of words and characters. Thus it is suitable for writing text with word/ character limit.
       </div>
     </div>
   </div>
